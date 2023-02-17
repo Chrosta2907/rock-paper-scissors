@@ -1,15 +1,13 @@
-let computerChoice
+// A function gets a random interger between 0 and 2 and assigns a choice to each one
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * 3);
     console.log(randomNumber)
     if (randomNumber === 0) {
-        computerChoice = "Rock"
+        return "Rock"
     }
     else if (randomNumber === 1) {
-        computerChoice = "Paper"
+        return "Paper"
     }
-    else {computerChoice = "Scissors"}
+    else {return "Scissors"}}
     
-    return computerChoice
-}
 console.log(getComputerChoice())
