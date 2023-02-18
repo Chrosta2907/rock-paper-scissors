@@ -9,5 +9,10 @@ function getComputerChoice() {
         return "Paper"
     }
     else {return "Scissors"}}
-    
+
 console.log(getComputerChoice())
+// A function asks the user for the input, and makes it case-insensitive
+
+// A function takes the computer choice and player choice, determines the winner and returns a string with explanation eg. ""You Lose! Paper beats Rock""
+
+// A function that calls the previous function(s) to start a new round and keep the score of the entire game
