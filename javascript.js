@@ -22,6 +22,8 @@ function getPlayerChoice() {
 
 // A function takes the computer choice and player choice, determines the winner and returns a string with explanation eg. ""You Lose! Paper beats Rock""
 function playRound(playerSelection, computerSelection){
+    playerSelection = getPlayerChoice();
+    computerSelection = getComputerChoice();
     switch(true){
     // there's a tie
         case playerSelection === computerSelection:
@@ -41,10 +43,23 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
-console.log("Human choice: " + playerSelection);
-console.log("Computer choice: " + computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+// Used for testing:
+// console.log("Human choice: " + playerSelection);
+// console.log("Computer choice: " + computerSelection);
+// console.log(playRound(playerSelection, computerSelection));
 
-// A function that calls the previous function(s) to start a new round and keep the score of the entire game
+// A function that calls the previous function(s) to start a new round and keep the score of the entire game up to five rounds
+
+// Play the game 5 times
+    // let playerWins = 0;
+    // let computerWins = 0;
+    for (let i = 0; i < 5; i++){
+        console.log(`Round ${i+1}: ` + playRound());
+        // if (playRound() === "You've won!"){
+        //     playerWins++; }
+        // else if (playRound() === "You've lost!"){
+        //     computerWins++; }
+        // else {
+        //     playerWins++;
+        //     computerWins++; }
+    }
