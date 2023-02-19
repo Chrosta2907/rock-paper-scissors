@@ -27,6 +27,7 @@ function playRound(playerSelection, computerSelection){
     switch(true){
     // there's a tie
         case playerSelection === computerSelection:
+            console.log("It's a draw, " + playerSelection + " versus " + computerSelection)
             return "It's a tie!";
             break;
     
@@ -34,32 +35,44 @@ function playRound(playerSelection, computerSelection){
         case playerSelection === "paper" && computerSelection === "rock":
         case playerSelection === "scissors" && computerSelection === "paper":
         case playerSelection === "rock" && computerSelection === "scissors":
+            console.log("You've won, " + playerSelection + " beats " + computerSelection)
             return "You've won!";
             break;
     // player loses here
         default:
+            console.log("You've lost, " + computerSelection + " beats " + playerSelection)
             return "You've lost!";
-            break;
-    }
+            break;}
 }
-
-// Used for testing:
-// console.log("Human choice: " + playerSelection);
-// console.log("Computer choice: " + computerSelection);
-// console.log(playRound(playerSelection, computerSelection));
-
 // A function that calls the previous function(s) to start a new round and keep the score of the entire game up to five rounds
-
-// Play the game 5 times
-    // let playerWins = 0;
-    // let computerWins = 0;
-    for (let i = 0; i < 5; i++){
-        console.log(`Round ${i+1}: ` + playRound());
-        // if (playRound() === "You've won!"){
-        //     playerWins++; }
-        // else if (playRound() === "You've lost!"){
-        //     computerWins++; }
-        // else {
-        //     playerWins++;
-        //     computerWins++; }
+// Record number of wins for each side in two variables,
+    function game() {
+        let playerWins = 0
+        let computerWins = 0
+        let result
+// increment them for each win  
+for (let i = 0; i < 5; i++){ 
+    result = playRound()    
+        if (result === "You've won!") {
+            playerWins++;
+        }
+        else if (result === "You've lost!") {
+            computerWins++;
+        }
+        else {
+            playerWins++;
+            computerWins++;
+        }
     }
+// at the end of the game compare the two and announce who the winner is       
+        if (playerWins > computerWins){
+            return "Player has won " + playerWins + ":" + computerWins
+        }
+        else if (computerWins > playerWins){
+            return "Computer has won " + computerWins + ":" + playerWins
+        }
+        else {
+            return "A draw!" + playerWins + ":" + computerWins + " for the player"
+        }
+    }
+    console.log(game())
