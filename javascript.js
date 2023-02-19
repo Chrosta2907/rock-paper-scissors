@@ -43,8 +43,8 @@ function playRound(playerSelection, computerSelection){
 
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
+console.log("Human choice: " + playerSelection);
+console.log("Computer choice: " + computerSelection);
 console.log(playRound(playerSelection, computerSelection));
-console.log(playerSelection)
-console.log(computerSelection)
 
 // A function that calls the previous function(s) to start a new round and keep the score of the entire game
